@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+#escrevendo para a a criação do arquivo e aplicando testes de erro caso haja entrada errada
 
 try:
     fasta_filename = sys.argv[1]
@@ -17,7 +18,7 @@ except Exception as error:
 
 seq_id = None
 seq_string = ''
-
+#criando variaveis com os nucleotideos e usando o strip para dividir a sequencia
 valid_nucleotides = set('ATCGN')
 
 for line in fasta_filehandle:
