@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
 import sys
-
+#entrada do arquivo fasta
 fasta_filename = sys.argv[1]
 fasta_filename = 'Python_08.fasta'
 fasta_filehandle = open(fasta_filename, 'r')
-seq_comp = dict()
+seq_comp = dict() #armazenando em dicionário
 seq_id = None
-
+#lendo e armazenando as variáveis
 for line in fasta_filehandle:
     line = line.rstrip()
     if line.startswith('>'):
@@ -19,7 +19,7 @@ for line in fasta_filehandle:
         for nucleotide in line:
             seq_comp[seq_id][nucleotide] += 1
             print(seq_comp)
-
+#imprimindo as variaveis depois da contagem
 print("seqName\tA_count\tT_count\tG_count\tC_count")
 
 for seq_id in seq_comp:
